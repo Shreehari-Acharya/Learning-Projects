@@ -4,7 +4,7 @@ This repository contains all the mini projects I've created while learning vario
 
 ## Contents
 
-1. **[Groww Landing Page Clone](./groww-clone)**
+### 1. Groww Landing Page Clone
    - **Description:** A clone of the Groww.in landing page, built entirely with HTML and inline CSS.
    - **Technologies:** HTML, CSS
    - **Key Learning:** Understanding layout design and basic styling using inline CSS.
