@@ -2,6 +2,9 @@
 
 This project is a clone of the Groww.in landing page, built as part of my web development learning journey. The primary focus of this project was to replicate the layout and styling using only HTML and inline CSS.
 
+## Live Link
+You can view a live demo of the project [here](https://shreehari-acharya.github.io/Learning-Projects/Groww-Clone/).
+
 ## Project Overview
 
 - **Project Name:** Groww Landing Page Clone
