@@ -17,11 +17,14 @@ You can view a live demo of the project [here](https://shreehari-acharya.github.
 - **Simple Layout:** The project focuses on the core structure and styling, without using any external libraries or frameworks.
 
 ## Project Structure
+
+```
 groww-clone/
 ├── fonts # The font used in the groww website 
 ├── imgs # Contains images used in landing page
 ├── index.html # Main HTML file containing the structure and inline CSS
 └── README.md # Project documentation
+```
 
 ## What I Learned
 
