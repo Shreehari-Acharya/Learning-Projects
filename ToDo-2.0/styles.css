@@ -1,0 +1,41 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+}
+
+
+:root {
+    --bg-color: #E8EBED;
+    --canvas-color: #ededef;
+    --button-hover-color: #0757f3;
+    --button-color:  #232529; 
+    --text-color-black: #232529;
+    --text-color-white: #f7f7f9;
+}
+
+* {
+    background-color: var(--bg-color);
+    margin: 0px 0px;
+    font-family: monospace;
+}
+
+.heading {
+    font-size: 5vh;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5vh;
+    opacity: 0;
+    animation: fadeIn 3s ease-in 0.75s forwards;
+    
+
+}
