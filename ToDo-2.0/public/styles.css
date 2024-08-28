@@ -55,6 +55,18 @@
     
 }
 
+.updateTask-inputArea {
+    
+    font-size: 1em;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    width: 100%;
+    
+}
+
+
+
 .addBtn {
     border: none;
     border-radius: 20px;
@@ -98,9 +110,9 @@
 }
 
 .task-description {
-    margin-right: 10%;
+    width: 78%;
     background-color: inherit;
-    font-size: larger;
+    font-size: 1.3em;
 }
 
 .task-box:hover {
