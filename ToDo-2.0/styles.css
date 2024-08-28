@@ -15,12 +15,10 @@
 
 
 :root {
-    --bg-color: #E8EBED;
-    --canvas-color: #ededef;
+    --bg-color: #EEF0F1;
     --button-hover-color: #0757f3;
-    --button-color:  #232529; 
-    --text-color-black: #232529;
-    --text-color-white: #f7f7f9;
+    --black-shade: #232529;
+    --white-shade: #F9FAFA;
 }
 
 * {
@@ -35,7 +33,33 @@
     text-align: center;
     margin-top: 5vh;
     opacity: 0;
-    animation: fadeIn 3s ease-in 0.75s forwards;
-    
+    animation: fadeIn 3s ease-in 0.75s forwards;    
+}
 
+.input-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+    height: 6vh;
+}
+
+.input-box {
+    
+    width: 40%;
+    padding: 1em;
+    background-color: var(--white-shade);
+    font-size: large;
+    border: none ;
+    border-radius: 10px;
+    box-shadow: 5px;
+    
+}
+
+.addBtn {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--white-shade);
+    color: var(--black-shade);
+    height: inherit;
+    margin-left: 2vb;
 }
