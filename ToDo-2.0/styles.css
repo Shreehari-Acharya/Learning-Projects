@@ -31,7 +31,7 @@
     font-size: 5vh;
     font-weight: 700;
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 4vh;
     opacity: 0;
     animation: fadeIn 3s ease-in 0.75s forwards;    
 }
@@ -39,7 +39,7 @@
 .input-area {
     display: flex;
     justify-content: center;
-    margin-top: 8vh;
+    margin: 6vh 6vh;
     height: 6vh;
 }
 
@@ -59,7 +59,59 @@
     border: none;
     border-radius: 20px;
     background-color: var(--white-shade);
-    color: var(--black-shade);
+    stroke: var(--black-shade);
     height: inherit;
+    width: 3%;
     margin-left: 2vb;
+    cursor: pointer;
+}
+
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+.task-box {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 1%;
+    height: 8vh;
+    width: 50%;
+
+}
+
+.doneBtn , .editBtn {
+    margin: 3% 3%;
+    background-color: inherit;
+    cursor: pointer;    
+}
+
+.doneBtn {
+    stroke: var(--black-shade);
+}
+.editBtn {
+    fill: var(--black-shade);
+}
+
+.task-description {
+    margin-right: 10%;
+    background-color: inherit;
+    font-size: larger;
+}
+
+.task-box:hover {
+    background: var(--white-shade);
+}
+.doneBtn:hover {
+    stroke: var(--button-hover-color);
+}
+.editBtn:hover {
+    fill: var(--button-hover-color);
+}
+.addBtn:hover {
+    stroke: var(--button-hover-color);
 }
