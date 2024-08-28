@@ -36,7 +36,7 @@ function renderTask(taskID,taskDescription){
 
     try {
         
-        const response = await fetch('api_url' , {
+        const response = await fetch('/api/addTask' , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ async function deleteTask(id){
     const taskdiv = taskContainerDiv.querySelector(`#${id}`);
 
     try {
-        const response = await fetch(`apiurl/${ID}` , {
+        const response = await fetch(`/api/tasks/${id}` , {
             method: 'DELETE'
         });
 
@@ -97,7 +97,7 @@ async function deleteTask(id){
 async function updateTask(ID,updatedDescription) {
 
     try {
-        const response = await fetch(`apirul/${ID}`, {
+        const response = await fetch(`/api/tasks/${ID}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ async function readTask() {
 
     taskContainerDiv.innerHTML = "";
 
-    const response = await fetch('apiurl');
+    const response = await fetch('/');
     const allTasks = await response.json();
 
     allTasks.forEach(task => {
@@ -154,11 +154,14 @@ inputfield.addEventListener('keydown', function(event){
 
 function handleClick(event){
 
-    if(event.target.closest('.editBtn')){
+    const editBtn = event.target.closest('.editBtn');
+    const doneBtn = event.target.closest('.doneBtn');
 
-        const parentdiv = event.target.parentElement;
+    if(editBtn){
+
+        const parentdiv = editBtn.closest('.task-box');
         const descriptionDiv = parentdiv.querySelector('div');
-        const prevDescription = descriptionDiv.textContent;
+        const prevDescription = descriptionDiv.textContent.trim();
         const taskID = parentdiv.id;
         descriptionDiv.innerHTML = `<input class="updateTask-inputArea" type="text" value="${prevDescription}">`
 
@@ -181,14 +184,14 @@ function handleClick(event){
             descriptionDiv.textContent = prevDescription;
         });
     }
-    if(event.target.closest('.doneBtn')){
-        const parentElement = event.target.parentElement;
+    if(doneBtn){
+        const parentElement = doneBtn.closest('.task-box');
         const id = parentElement.id;
         deleteTask(id);
     }
 }
 
-
+// window.onload = readTask;
 document.querySelector('.task-container').addEventListener('click', handleClick);
 
 
