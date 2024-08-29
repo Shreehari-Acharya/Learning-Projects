@@ -2,9 +2,9 @@
   "name": "todo-2.0",
   "version": "1.0.0",
   "description": "A simple To-Do application with persistence using a file ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js" 
+    "start": "node server.js" 
   },
   "author": "Shreehari Acharya",
   "license": "ISC",
