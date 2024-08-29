@@ -74,22 +74,14 @@ app.post('/api/addTask', (req, res) => {
 
 // Delete a task --> DELETE operation
 app.delete('/api/tasks/:id', (req, res) => {
-    const taskId = parseInt(req.params.id); // Extract task ID from the URL
+    const taskId = req.params.id // Extract task ID from the URL
     let tasks = loadTasks();
 
     // Filter out the task with the specified ID
     tasks = tasks.filter(task => task.id !== taskId);
 
     // Save the updated tasks array
-    fs.writeFile('tasks.json', JSON.stringify(tasks), (err) => {
-        if (err) {
-            console.error('Error writing to tasks.json:', err);
-            res.status(500).send('Error deleting task.');
-            return;
-        }
-
-        res.status(200).send('Task deleted successfully.');
-    });
+    saveTasks(tasks);
     
     res.status(200).send('Task deleted successfully.'); // Send a success message
 });
