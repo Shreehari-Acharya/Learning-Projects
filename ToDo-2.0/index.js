@@ -1,17 +1,20 @@
+
 const express = require('express')
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
-const port = 3000
 
-const app = express()
+// Initialising
+const port = 3000
 const tasksFile = path.join(__dirname, 'tasks.json');
+const app = express()
 app.use(bodyParser.json());
 
-
+// Serving the public folder that contains frontend code.
 app.use(express.static('public'));
 
 
+// function to return the data from tasks.json
 function loadTasks() {
     if (fs.existsSync(tasksFile)) {
         const data = fs.readFileSync(tasksFile);
@@ -20,18 +23,37 @@ function loadTasks() {
     return [];
 }
 
+// function to save the tasks into the tasks.json
 function saveTasks(tasks) {
     fs.writeFileSync(tasksFile, JSON.stringify(tasks, null, 2));
 }
 
 
-// Get all tasks --> READ operation
-app.get('/', (req, res) => {
+// All the CRUD operations on the tasks
+
+// CREATE operation
+app.post('/api/addTask', (req, res) => {
+    const tasks = loadTasks();
+    const idValue = "ttd" + Date.now().toString(); // Generate a unique ID
+    const newTask = {
+        id: idValue,
+        description: req.body.description
+    };
+
+    tasks.push(newTask);
+    saveTasks(tasks);
+
+    res.status(201).json({ taskID: newTask.id }); // Return the new task's ID
+});
+
+
+// READ operation
+app.get('/all', (req, res) => {
     const tasks = loadTasks();
     res.json(tasks);
 });
 
-// Update a task --> UPDATE operation
+// UPDATE operation
 app.put('/api/tasks/:id', (req, res) => {
     const taskId = req.params.id;
     const { newDescription } = req.body;
@@ -56,20 +78,6 @@ app.put('/api/tasks/:id', (req, res) => {
     }   
 });
 
-// Add a task --> ADD operation
-app.post('/api/addTask', (req, res) => {
-    const tasks = loadTasks();
-    const idValue = "ttd" + Date.now().toString(); // Generate a unique ID
-    const newTask = {
-        id: idValue,
-        description: req.body.description
-    };
-
-    tasks.push(newTask);
-    saveTasks(tasks);
-
-    res.status(201).json({ taskID: newTask.id }); // Return the new task's ID
-});
 
 
 // Delete a task --> DELETE operation
@@ -87,6 +95,8 @@ app.delete('/api/tasks/:id', (req, res) => {
 });
 
 
+
+// Listen..
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })
