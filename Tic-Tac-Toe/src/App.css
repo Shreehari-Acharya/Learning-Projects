@@ -1,8 +1,8 @@
 .game {
-    border: black solid 2px;
-    height: 60%;
-    width: 27%;
+    height: 80%;
+    width: 35%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -12,16 +12,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
     width: 95%;
-    height: 95%;
-    border: black solid 2px;
+    height: 97%;
+    background-color: black;
+    border-radius: 15px;
 
 }
 .board-row {
-    border: black solid 2px;
+    background-color: black;
     height: 30%;
-    width: 95%;
+    width: 97%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,11 +29,54 @@
 }
 
 .square-btn {
-    height: 90%;
+    height: 100%;
     width: 90%;
-    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 10px;
+    background-color: whitesmoke;
+    color: black;
     font-size: 800%;
+    font-weight: 600;    
+}
+.winner-btn {
+    background-color: greenyellow;
+    color: black;
+}
+.game-info {
+    font-size: 400%;
     font-weight: 600;
+    margin: 10px;
+
+}
+
+.btns {
+    display: flex;
+    width: 40vw;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
     
+}
+.undo-btn, .redo-btn {
+    height: 50%;
+    margin: 10px;
+    width: 25%;
+    font-size: xx-large;
+    font-weight: 400;
+    border-radius: 10px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.new-btn {
+    height: 100%;
+    margin: 10px;
+    width: 100%;
+    font-size: xx-large;
+    font-weight: 400;
+    border-radius: 10px;
+    background-color: black;
+    color: whitesmoke;
 }
